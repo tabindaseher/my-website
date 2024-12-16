@@ -302,7 +302,7 @@ export default function All_Product () {
         className="w-full h-64 object-cover"/>
       <div className="p-4">
       <p className="font-medium text-[15px]mt-2 text-[#9E3500]">Just In</p>
-        <p className="text-[15px] font-normal text-black">Nike Air Force 1 '07</p>
+        <p className="text-[15px] font-normal text-black">Nike Air Force 1 &apos;07</p>
        <p className="text-[15px] font-normal text-[#757575]">Women&apos;s Shoes</p>
        <p className="text-[15px] font-normal text-[#757575]">2 Colour</p>
        <p className="text-[15px] font-normal text-black mt-2">MRP : ₹ 8 195.00</p>

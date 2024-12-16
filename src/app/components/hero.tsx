@@ -61,7 +61,7 @@ export default function Hero() {
         <p className="font-medium text-[15px] mt-2">Nike Air Max Pulse</p>
         <span className="font-medium text-[15px] mt-2 ">₹ 13 995</span>
         </div>
-       <p className="text-[15px] font-normal text-[#757575]">Women's Shoes</p>
+       <p className="text-[15px] font-normal text-[#757575]">Women&apos;s Shoes</p>
        </div>
 
         {/*shoe 2*/}
@@ -71,7 +71,7 @@ export default function Hero() {
         <p className="font-medium text-[15px]mt-2">Nike Air Max Pulse</p>
         <span className="font-medium text-[15px] mt-2 ">₹ 13 995</span>
         </div>
-       <p className="text-[15px] font-normal text-[#757575]">Men's Shoes</p>
+       <p className="text-[15px] font-normal text-[#757575]">Men&apos;s Shoes</p>
        </div>
 
         {/*shoe 3*/}
@@ -81,7 +81,7 @@ export default function Hero() {
         <p className="font-medium text-[15px] mt-2">Nike Air Max 97 SE</p>
         <span className="font-medium text-[15px]  mt-2">₹ 16 995</span>
         </div>
-       <p className="text-[15px] font-normal text-[#757575]">Men's Shoes</p>
+       <p className="text-[15px] font-normal text-[#757575]">Men&apos;s Shoes</p>
        </div>
 
          {/*shoe 4*/}
@@ -91,7 +91,7 @@ export default function Hero() {
         <p className="font-medium text-[15px] mt-2">Nike Air Max SYSTM</p>
         <span className="font-medium text-[15px] mt-2 ">₹ 16 995</span>
         </div>
-       <p className="text-[15px] font-normal text-[#757575]">Women's Shoes</p>
+       <p className="text-[15px] font-normal text-[#757575]">Women&apos;s Shoes</p>
        </div>
 
    

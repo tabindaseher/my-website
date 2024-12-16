@@ -37,9 +37,9 @@ import React from 'react'
         <ul>
         <h3 className='font-medium text-[15px] leading-6  mb-8'>Kids&apos; </h3>
             <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Infant & Toddler Shoes</li>
-            <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Kids' Shoes</li>
-            <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Kids' Jordan Shoes</li>
-            <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Kids' Basketball Shoes</li>
+            <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Kids&apos; Shoes</li>
+            <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Kids&apos; Jordan Shoes</li>
+            <li  className='font-medium text-[15px] leading-6 text-[#757575] mt-2'>Kids&apos; Basketball Shoes</li>
         </ul>
         </div>
 

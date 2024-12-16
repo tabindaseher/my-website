@@ -1,4 +1,5 @@
  /* eslint-disable @typescript-eslint/no-unused-vars */
+ /* eslint-disable react/no-unescaped-entities */
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
