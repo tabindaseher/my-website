@@ -12,7 +12,7 @@ const ContactUs = () => {
     return (
       <div>   
         <Header/>
-              {/* get help heading with box */}
+              {/* Heading of Get Help */}
               <h1 className="font-medium text-4xl leading-[36px] text-center">GET HELP</h1>
               <div className="flex justify-center mt-4">
               <div className="rounded-lg h-[56px] w-[457.33px] flex border justify-between items-center pl-2">
@@ -21,9 +21,11 @@ const ContactUs = () => {
               </div>
               </div>
 
-              {/* right side  */}
-              <div className=" flex">
-              <div className="w-[939.75px] h-auto ">
+              {/* Hero Section Part  */}
+              <div className=" md:flex">
+
+                {/* Left Side */}
+              <div className="w-full md:w-[939.75px] h-auto ">
                 <h2 className="font-medium text-[28px] mt-6 ml-6 ">WHAT PAYMENT OPTIONS CAN I USE ON NIKE ORDERS?</h2>
                 <p className="font-normal text-[15px] mt-6 ml-6">We want to make buying your favourite Nike shoes and gear online fast and easy, and we accept the following payment options:</p>
                 <div className="pl-8 font-normal text-[15px] mt-6 ml-6">
@@ -31,6 +33,7 @@ const ContactUs = () => {
                   <p>If you enter your PAN information at checkout, you&apos;ll be able to pay for your order with PayTM or a local credit or debit card.</p>
                   <p>Apple Pay</p>
                 </div>
+
                 {/* nike members with buttons */}
                
                   <p className="font-normal text-base  mt-6 ml-6"><span className="font-medium text-base underline">Nike Members</span>can store multiple debit or credit cards in their profile for faster checkout. If you&apos;re not already a Member, join us today.</p>
@@ -44,7 +47,7 @@ const ContactUs = () => {
                    </button>
                 </div>
         
-                {/* faqs */}
+                {/* FAQs */}
                
                 <div className="mt-6 ml-6">
                   <h1 className="font-medium text-xl">FAQs</h1>
@@ -56,7 +59,7 @@ const ContactUs = () => {
                   <p className="font-bold text-base mt-4">What payment method is accepted for SNKRS orders?</p>
                   <p className="font-normal text-base">You can use any accepted credit card to pay for your SNKRS order.</p>
                   <p className="font-bold text-base mt-4">Why don&apos;t I see Apple Pay as an option?</p>
-                  <p className="font-normal text-base w-[922.04px]">To see Apple Pay as an option in the Nike App or on Nike.com, you&apos;ll need to use a compatible Apple device running the latest OS, be signed in to your iCloud account and have a supported card in your Wallet. Additionally, you&apos;ll need to use Safari to use Apple Pay on Nike.com.</p>
+                  <p className="font-normal text-basew-full md:w-[922.04px]">To see Apple Pay as an option in the Nike App or on Nike.com, you&apos;ll need to use a compatible Apple device running the latest OS, be signed in to your iCloud account and have a supported card in your Wallet. Additionally, you&apos;ll need to use Safari to use Apple Pay on Nike.com.</p>
                   <p className="font-normal text-base mt-6">Was this answer helpful?</p>
                   <div className="flex mt-1">
                     <VscThumbsupFilled/>
@@ -65,14 +68,15 @@ const ContactUs = () => {
                   <p  className="font-medium text-base text-[#757575] mt-2">RELATED</p>
                   <p  className="font-medium text-base leading-[28px] underline pl-8 mt-4">WHAT ARE NIKE&apos;S DELIVERY OPTIONS?</p>
                   <p  className="font-medium text-base leading-[28px] underline pl-8 mt-4">HOW DO I GET FREE DELIVERY ON NIKE ORDERS?</p>
+                 </div>
 
-                </div>
-
-              </div>
+                 </div>
            
               {/* vertical line */}
+
               <div className="border-l border-gray-200 h-auto ml-2"></div>
-               {/* left side */}
+
+               {/* Right side */}
 
               <div className="grid place-items-center h-screen space-y-6">   
                 <h1 className="font-medium text-[28px] leading-8 mt-6 ml-6">CONTACT US</h1>

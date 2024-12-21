@@ -11,22 +11,22 @@ export default function Hero() {
   return (
     <>
     {/*Heading*/}
-    <div className="bg-[#F5F5F5] ">
-      <h1 className="font-medium text-[15px] text-center text-[#111111]">Hello Nike App</h1>
-      <p className="font-normal text-center">Download the app to access everything Nike.<span className="font-medium underline ">Get Your Great</span></p>
+    <div className="bg-[#F5F5F5] px-4 py-4">
+      <h1 className="font-medium text-[15px] text-center text-[#111111] sm:text-[15px]">Hello Nike App</h1>
+      <p className="font-normal text-center sm:text-[16px]">Download the app to access everything Nike.<span className="font-medium underline ">Get Your Great</span></p>
     </div>
-
-    {/*Main Image*/}
-    <Image src={image} alt="herosec"/>
-
-    {/*Air Max pulse*/}
-    <div className=" flex flex-col py-12">
-      <p className="font-medium text-center leading-[24px] ">First Look</p>
-      <h1 className="font-medium text-[56px] text-center leading-[56px] mt-2">Nike Air Max Pulse</h1>
-      <p className="font-normal text-center leading-[24px] pr-[248.45px] pl-[248.55px] mt-6 text-[#111111]">Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse
+     {/*Main Image*/}
+     <div className="w-full">
+    <Image src={image} alt="Showcasing Nike Air Show"
+    className="w-full object-cover" />
+    </div>
+     {/*Air Max pulse*/}
+    <div className=" flex flex-col items-center py-8 px-6 md:py-12">
+      <p className="font-medium text-center text-[16px] md:text-[18px] leading-[24px] ">First Look</p>
+      <h1 className="font-medium sm:text-[48px] md:text-[56px] text-center sm:leading-[40px] leading-[56px] mt-2">Nike Air Max Pulse</h1>
+      <p className="font-normal text-center leading-[24px] text-[14px] md:text-[16px] mt-6 text-[#111111] mx-w-xl">Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse
      —designed to push you past your limits and help you go to the max.</p>
-
-      {/*Buutons*/}
+   {/*Buutons*/}
     <div className=" flex justify-center items-center gap-[6px] mt-6 ">
      <button className="rounded-[30px] py-[7.5px] pr-[22.08px] pl-[21.5px] bg-black  ">
       <p className="text-[#FFFFFF] font-medium text-[15px] text-center">Notify Me</p>
@@ -38,46 +38,45 @@ export default function Hero() {
       </div>
     </div>
     {/*Best of Air Max*/}
-    <div className="flex justify-between items-center ">
-      <p className="font-medium text-[22px] pl-4">Best of Air Max</p>
-   
-      
-        <div className=" flex  items-centerspace-x-2 gap-[12.38px] pr-4">
-        <p className="font-medium text-[15px] pt-2">Shop</p>
+    <div className="flex flex-col md:flex-row justify-between items-center py-6 px-4 ">
+      <p className="font-medium text-[18px] md:text-[22px] ">Best of Air Max</p>
+      <div className="flex  items-center  gap-[12.38px] mt-4 md:mt-0 ">
+        <p className="font-medium text-[14px] md:text-[15px] ">Shop</p>
         {/*arrows buttons*/}
-        <button className="w-[48px] h-[48px] rounded-[24px] bg-[#F5F5F5] pl-2"> 
+        <button className="w-[48px] h-[48px] rounded-[24px] bg-[#F5F5F5] justify-center items-center pl-2" aria-label="Previous-items"> 
          <Image src={tag1} alt="tag1"/> </button>
-        <button className="w-[48px] h-[48px] rounded-[24px] bg-[#E5E5E5] pl-3">
+        <button className="w-[48px] h-[48px] rounded-[24px] bg-[#E5E5E5] justify-center items-center pl-2"
+        aria-label="Next-items">
         <Image src={tag2} alt="tag1"/>  </button>
         </div>
       </div>
 
       {/* Four Shoes */}
-      <div className="flex space-x-3 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
         {/*shoe 1*/}
       <div className="flex flex-col">
-        <Image src={image2} alt="pic1"/>
-        <div className="flex justify-between">
-        <p className="font-medium text-[15px] mt-2">Nike Air Max Pulse</p>
-        <span className="font-medium text-[15px] mt-2 ">₹ 13 995</span>
+        <Image src={image2} alt="pic1" className="w-full object-cover" />
+        <div className="flex justify-between mt-2">
+        <p className="font-medium text-[15px] ">Nike Air Max Pulse</p>
+        <span className="font-medium text-[15px]  ">₹ 13 995</span>
         </div>
        <p className="text-[15px] font-normal text-[#757575]">Women&apos;s Shoes</p>
        </div>
 
         {/*shoe 2*/}
        <div className="flex flex-col ">
-       <Image src={image2} alt="pic1"/>
-        <div className="flex justify-between">
-        <p className="font-medium text-[15px]mt-2">Nike Air Max Pulse</p>
-        <span className="font-medium text-[15px] mt-2 ">₹ 13 995</span>
+       <Image src={image2} alt="pic1" className="w-full object-cover"/>
+        <div className="flex justify-between mt-2">
+        <p className="font-medium text-[15px]">Nike Air Max Pulse</p>
+        <span className="font-medium text-[15px]  ">₹ 13 995</span>
         </div>
        <p className="text-[15px] font-normal text-[#757575]">Men&apos;s Shoes</p>
        </div>
 
         {/*shoe 3*/}
        <div className="flex flex-col ">
-       <Image src={image4} alt="pic1"/>
-        <div className="flex justify-between">
+       <Image src={image4} alt="pic1" className="w-full object-cover"/>
+        <div className="flex justify-between mt-2">
         <p className="font-medium text-[15px] mt-2">Nike Air Max 97 SE</p>
         <span className="font-medium text-[15px]  mt-2">₹ 16 995</span>
         </div>
@@ -86,25 +85,23 @@ export default function Hero() {
 
          {/*shoe 4*/}
          <div className="flex flex-col ">
-       <Image src={image4} alt="pic1"/>
-        <div className="flex justify-between mb-2">
-        <p className="font-medium text-[15px] mt-2">Nike Air Max SYSTM</p>
-        <span className="font-medium text-[15px] mt-2 ">₹ 16 995</span>
+       <Image src={image4} alt="pic1" className="w-full object-cover"/>
+        <div className="flex justify-between mt-2">
+        <p className="font-medium text-[15px] ">Nike Air Max SYSTM</p>
+        <span className="font-medium text-[15px] ">₹ 16 995</span>
         </div>
        <p className="text-[15px] font-normal text-[#757575]">Women&apos;s Shoes</p>
        </div>
-
-   
 </div>
 
 {/*Running boy*/}
-     <div className="mt-16 pl-5">
+     <div className="mt-16 px-5">
      <p className="font-medium text-[23px] leading-[28px] mb-6">Featured</p>
-     <Image src={image5} alt="pic5"/>
-     <div className="text-center mt-10">
-    <p className="font-medium text-[54px] leading-[60px]">STEP INTO WHAT FEELS GOOD</p>
-    <p className="font-normal text-[15px] leading-[24px] mt-8">Cause everyone should know the feeling of running in that perfect pair.</p>
-    <button className="rounded-[30px] py-[7.5px] pr-[23.92px] pl-[22.5px] bg-black  mt-8">
+     <Image src={image5} alt="pic5" className="w-full object-cover"/>
+     <div className="text-center mt-10 px-2 lg:px-0">
+    <p className="font-medium text-[36px] sm:text-[54px] leading-[42px] sm:leading-[60px]">STEP INTO WHAT FEELS GOOD</p>
+    <p className="font-normal text-[15px] leading-[24px] mt-8 max-w-2xl mx-auto">Cause everyone should know the feeling of running in that perfect pair.</p>
+    <button className="rounded-[30px]  px-2 py-[7.5px]  bg-black  mt-8">
       <p className="text-[#FFFFFF] font-medium text-center">Find Your Shoe</p>
       </button>
 

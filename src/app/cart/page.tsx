@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Image from 'next/image';
 import pic6 from "@/app/assets/Image (6).png";
@@ -8,16 +9,24 @@ import Link from 'next/link';
 import sign  from "@/app/assets/Frame (9).png"
 import logo from "@/app/assets/Frame.png";
 import searchIcon from "@/app/assets/Vector (3).png"
-import cartIcon from "@/app/assets/Vector (2).png"
- const Cart = () => {
-  return (
-    <>
+import cartIcon from "@/app/assets/Vector (2).png";
 
-    {/* Top header */}  
+ const Cart = () => {
+return (
+    <>
+ {/* Top header */}  
     <div className="flex justify-between py-[10px] pr-[6.13px] pl-3 gap-[15.38px] bg-[#F5F5F5]">
         <Image src={topLogo} alt="toplogo" className="w-[19.2px] h-[17.97px]"/>
-        <ul className="flex  gap-[15.38px]">
-           <li className="leading-[14px] font-medium text-[11px] pr-2">
+
+        <div className="block md:hidden">
+        <button className="text-gray-700 focus:outline-none">
+        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+        </button>
+  </div>
+        <ul className="  gap-[15.38px] hidden sm:flex ">
+           <li className="leading-[14px] font-medium text-[11px] pr-2 ">
             <Link href="#">Find a Store</Link>
             <span className="w-[6px] h-[18px] pl-3">|</span>
            </li>
@@ -33,12 +42,21 @@ import cartIcon from "@/app/assets/Vector (2).png"
           < Image src={sign} alt='signin image'  className='w-[24px] h-[24px]'/>
           </li>
         </ul>
+
       </div>
 
        {/*NavBar*/}   
       <div className="flex py-4 justify-between items-center px-4 ">
-        <Image src={logo} alt="logo"/>
-        <ul className="flex justify-center h-10 gap-3 py-4 ">
+        <Image src={logo} alt="logo"  className="w-auto h-[40px]"/>
+
+        <div className="block md:hidden">
+    <button className="text-gray-700 focus:outline-none">
+      <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+        <ul className=" gap-6 text-base font-medium hidden sm:flex">
         <Link href="/allProduct" className="font-medium text-base leading-[24px]" > New & Featured</Link>
          <Link href="/product" className="font-medium text-base leading-[24px]">Men</Link>
          <Link href="/login" className="font-medium text-base leading-[24px]">Women</Link>
@@ -46,9 +64,10 @@ import cartIcon from "@/app/assets/Vector (2).png"
          <Link href="/cart" className="font-medium text-base leading-[24px]">Sale</Link>
          <Link href="/checkout" className="font-medium text-base leading-[24px]">SNKRS</Link>
         </ul>
+        {/* search */}
         <div className="bg-[#F5F5F5] rounded-[100px] w-[180px] h-10 flex justify-between items-center px-4 py-3 ">
           <Image src={searchIcon} alt="search"  className="w-[16.72px] h-[16.72px] "/>
-          <input type="input" placeholder="Search" className="bg-[#F5F5F5] focus-visible:outline-none w-[84px] h-[18px] "/>
+          <input type="input" placeholder="Search" className="bg-[#F5F5F5] focus-visible:outline-none w-[120px] h-[18px] "/>
         </div>
         <div className="flex gap-3 py-[12px]">
         <Image src={wishlistIcon} alt="wishlist" className="w-[19.5px] h-[16.76px]"/>
@@ -56,12 +75,13 @@ import cartIcon from "@/app/assets/Vector (2).png"
         </div>
       </div>
  
+           {/* hero section */}
+        <div className=' flex flex-col sm:flex-row sm:justify-between'>
 
-        <div className='flex '>
         {/* left side */}
-             <div className='w-full left-[155.5px] relative'>
+             <div className='w-full sm:w-[627.38px] p-4'>
         {/* Box */}
-            <div className=' w-[627.38px]  bg-[#E5E5E5] pl-4 pt-2'>
+            <div className='w-full sm:w-[700.38px]  bg-[#E5E5E5] pl-4 pt-2'>
               <p className='font-medium text-[13px] leading-[14px] tracking-[0.5px]'>Free Delivery</p>
               <p className='font-medium text-[11px] leading-[24px]'>Applies to orders of ₹ 14 000.00 or more.
                 <span className='font-medium text-[11px] leading-[24px] underline pl-6'>View details</span>
@@ -71,11 +91,11 @@ import cartIcon from "@/app/assets/Vector (2).png"
            <div>
               <h2 className='font-medium text-[22px] leading-[33px] mt-2'>Bag</h2>
       {/* box of Pic, description , details */}
-            <div className="grid grid-cols-2 mt-8 mr-64 ">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 ">
       {/* Image */}
-           <div >
-          <Image src={pic6} alt="Nike Product"  className="w-[150px] h-[150px] object-cover rounded-md" />
-           </div>
+      <div className="flex justify-center">
+        <Image src={pic6} alt="Nike Product" className="w-[150px] h-[150px] object-cover rounded-md" />
+      </div>
       {/* Deatils */}
       <div className="space-y-2">
       <div className='flex justify-between items-center'>
@@ -91,12 +111,12 @@ import cartIcon from "@/app/assets/Vector (2).png"
       </p>
 
     {/* Size and Quantity */}
-    <div className=" flex pr-2">
+    <div className=" flex flex-col sm:flex-row sm:space-x-4 mt-2">
       <div className="flex items-center space-x-2">
         <p className="font-normal text-[15px] leading-[28px] text-[#757575]">Size:</p>
         <p className="font-normal text-[15px] leading-[28px]">L</p>
       </div>
-      <div className="flex items-center space-x-2 pl-10">
+      <div className="flex items-center space-x-2 sm:pl-10">
         <p className="font-normal text-[15px] leading-[28px] text-[#757575]">Quantity:</p>
         <p className="font-normal text-[15px] leading-[28px]">1</p>
       </div>
@@ -112,8 +132,9 @@ import cartIcon from "@/app/assets/Vector (2).png"
 </div>
 
 
-{/*box of without Pic, description , details  */}
-<div className="grid grid-cols-2 mt-8 mr-64">
+{/* 2nd box of description , details  */}
+
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 ">
                    
   {/* Hidden Image */}
   <div>
@@ -135,7 +156,7 @@ Flat Pewter/Light Bone/Black/White
 </p>
 
 {/* Size and Quantity */}
-<div className=" flex pr-2">
+<div className=" flex flex-col sm:flex-row sm:space-x-4 mt-2">
 <div className="flex items-center space-x-2">
 <p className="font-normal text-[15px] leading-[28px] text-[#757575]">Size:</p>
 <p className="font-normal text-[15px] leading-[28px]">8</p>
@@ -160,7 +181,7 @@ Flat Pewter/Light Bone/Black/White
 
 
 {/* right side */}
- <div className=" w-[350.67px] mb-96 mx-auto p-8 h-auto  ">
+ <div className=" w-full sm:w-[350.67px] mx-auto p-6 sm:p-8 h-auto ">
   {/* Summary Heading*/}
     <div className="space-y-4 mb-auto ">
     <h2 className="text-[21px] font-medium leading-[33px]">Summary</h2>
@@ -187,16 +208,14 @@ Flat Pewter/Light Bone/Black/White
   <div className="flex justify-between items-center border-t mt-4">
 
   {/* Checkout Button */}
-  <button className=" w-[334px] h-[60px] bg-black text-white font-medium  hover:bg-gray-800  rounded-[30px] mt-6 pr-4">
+  <button className="w-full sm:w-[334px] h-[60px] bg-black text-white font-medium hover:bg-gray-800 rounded-[30px] mt-6">
     Checkout Members
   </button>
   </div>
 </div>
 </div>
 </>
-
-   
-  )
+ )
 }
 export default Cart
 

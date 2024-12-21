@@ -8,9 +8,9 @@ import { FaTwitter } from "react-icons/fa";
 
  const Footer = () => {
   return (
-    < div className="w-full">
-      <div className="bg-[#111111] flex flex-col gap-10 py-10 mt-28  lg:px-16 md:px-12 sm:px-8 px-4 w-full">
-      <div className="flex flex-wrap justify-between items-start w-full max-w-screen mx-auto">
+    < div >
+     <div className="w-full bg-[#111111]  py-10 px-6 md:px-8 lg:px-16 mt-28">
+     <div className="flex flex-wrap justify-between gap-10 max-w-screen-lg mx-auto">
       <div className="flex flex-wrap justify-center gap-16">
 
              {/* find a store list */}
@@ -65,7 +65,7 @@ import { FaTwitter } from "react-icons/fa";
 
 </div>
              {/* inner part of footer */}
-                 <div className="flex justify-between flex-wrap items-center max-w-screen-lg">
+                 <div className="flex justify-between flex-wrap items-center max-w-screen-lg mt-14 mx-auto">
                 <div className="text-[#838383] font-normal text-[12px] flex gap-7 items-center"><span className="flex gap-4 text-white"><IoLocationSharp size={25}/> Pakistan</span><h3 className="flex items-center gap-2">< FaRegCopyright size={15}/> Nike, Inc. 2022. All rights reserved.</h3></div>
                 <ul className="flex gap-5 flex-wrap">
                     <li className="text-[0.8em] text-[#737373]">Guides</li>

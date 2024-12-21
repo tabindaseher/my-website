@@ -8,7 +8,7 @@ export default function Contact(){
     return (
       <>
       <Header/>
-      <div className="py-10 m-auto xl:w-[25%] my-10 gap-5 lg:w-[35%] md:w-[50%] sm:w-[65%] w-[100%] px-4 flex flex-col h-[100%] justify-center items-center text-center">
+      <div className=" m-auto xl:w-[25%] my-10 gap-5 lg:w-[35%] md:w-[50%] sm:w-[100%] px-4 flex flex-col h-[100%] justify-center items-center text-center">
    
         <div className="w-[324px] h-[128px] top-[28px] left-[28px] ">
           {/* logo nike */}

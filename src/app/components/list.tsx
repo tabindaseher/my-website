@@ -3,7 +3,7 @@ import React from 'react'
  const Lists = () => {
   return (
     <div className='w-full '>
-        <div className='flex justify-around items-center top-[96px] relative'>
+ <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 top-[96px] relative pl-4">
   {/* Icons */}
         <ul >
         <h3 className='font-medium text-[15px] leading-6  text-[#111111] mb-8'>Icons</h3>

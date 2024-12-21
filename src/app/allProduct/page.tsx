@@ -51,8 +51,8 @@ export default function All_Product () {
             <Image src={sort} alt="sort" className='w-[14px] h-[14px]' />
         </div>
         </div>
-        <div className=' flex '>
-        {/* list from right side*/}
+        <div className='md:flex '>
+        {/* left side*/}
         <div className='mt-4 h-[849px] w-[260px] '>
             <div className='h-[400.72px] w-[192px]'> 
                 <ul className='font-medium size-[15px] leading-[21.6px] w-[192.38px] pl-4'>
@@ -125,9 +125,9 @@ export default function All_Product () {
      </div>  
 </div>
 
-{/* pictures from left side */}
+{/* Right side */}
 <div className="container mx-auto p-4">
-  <div className="grid grid-cols-3 gap-6">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     {/* pic 1 */}
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
      <Image src={pic1} alt="pic1"
@@ -523,48 +523,29 @@ export default function All_Product () {
 
 </div>
 {/* Related Categories */}
-<div className="container mx-auto p-6 mr-2 ">
+<div className="container mx-auto p-6">
   {/* Heading */}
   <h2 className="font-medium text-[19px] mt-10">Related Categories</h2>
-  
-  <div className="grid grid-cols-7 gap-3 mt-10 p-1    ">
-    {/* First 8 Boxes */}
-    <div className=" text-center  text-sm rounded-[20px] py-0 shadow hover:bg-gray-200 transition border-gray-50">
-      Best Selling Products
-    </div>
-    <div className=" text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50">
-      Best Shoes
-    </div>
-    <div className="text-center  text-sm rounded-[20px]  shadow hover:bg-gray-200 transition border-gray-50">
-      New Basketball Shoes
-    </div>
-    <div className=" text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50">
-      New Football Shoes
-    </div>
-    <div className=" text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50">
-      New Men&apos;s Shoes
-    </div>
-    <div className=" text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50">
-      New Running Shoes
-    </div>
-    <div className="text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50">
-    Best Men&apos;s Shoes
-    </div>
 
-    {/* Next 2 Boxes */}
-    <div className="col-span-3 grid grid-cols-3 gap-2 mt-2">
-      <div className="text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50  ">
-        Best Women&apos;s Shoes
-      </div>
-      <div className=" text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50 ">
-        Best Training & Gym
-      </div>
-      <div className=" text-center  text-sm rounded-[20px] shadow hover:bg-gray-200 transition border-gray-50">
-      New Jordan Shoes
-      </div>
-    </div>
+  {/* Grid Layout */}
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 mt-10 p-1">
+    {[
+      "Best Selling Products",
+      "Best Shoes",
+      "New Basketball Shoes",
+      "New Football Shoes",
+      "New Men's Shoes",
+      "New Running Shoes",
+      "Best Men's Shoes",
+      "Best Women's Shoes",
+      "Best Training & Gym",
+      "New Jordan Shoes",
+    ].map((category, index) => (
+      <div  key={index} className="text-center text-sm rounded-[20px] py-2 shadow hover:bg-gray-200 transition border-gray-50">{category} </div>
+    ))}
   </div>
 </div>
+
 
 
 </div>
