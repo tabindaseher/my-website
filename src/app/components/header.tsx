@@ -39,7 +39,7 @@ const Header = () => {
         }`}
       >
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            <Link href="/allproduct">Find a Store</Link>
+            <Link href="/allProduct">Find a Store</Link>
             <span className="w-[6px] h-[18px] pl-3">|</span>
            </li>
 
