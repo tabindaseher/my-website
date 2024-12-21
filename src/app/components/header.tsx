@@ -39,22 +39,22 @@ const Header = () => {
         }`}
       >
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            <Link href="#">Find a Store</Link>
+            <Link href="/allproduct">Find a Store</Link>
             <span className="w-[6px] h-[18px] pl-3">|</span>
            </li>
 
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            <Link href="#">Help</Link>
+            <Link href="/contact">Help</Link>
             <span className="w-[6px] h-[18px] pl-3">|</span>
            </li>
 
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            <Link href="#">Join Us</Link>
+            <Link href="/join">Join Us</Link>
             <span className="w-[6px] h-[18px] pl-3">|</span>
            </li>
 
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            <Link href="#">Sign In</Link>
+            <Link href="/login">Sign In</Link>
          
            </li>
 </ul>
