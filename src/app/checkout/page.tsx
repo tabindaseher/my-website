@@ -27,7 +27,7 @@ const CheckOut = () => {
             {/* left side  */}
             <div className="w-full sm:w-[440px] py-8">
                 <h1 className="font-medium text-xl py-2">How would you like to get your order?</h1>
-                <p className="font-normal text-sm text-[#757575] py-2">Customs regulation for India require a copy of the recipient's KYC. The address on the KYC needs to match the shipping address. Our courier will contact you via SMS/email to obtain a copy of your KYC. The KYC will be stored securely and used solely for the purpose of clearing customs (including sharing it with customs officials) for all orders and returns. If your KYC does not match your shipping address, please click the link for more information. Learn More</p>
+                <p className="font-normal text-sm text-[#757575] py-2">Customs regulation for India require a copy of the recipient&apos;s KYC. The address on the KYC needs to match the shipping address. Our courier will contact you via SMS/email to obtain a copy of your KYC. The KYC will be stored securely and used solely for the purpose of clearing customs (including sharing it with customs officials) for all orders and returns. If your KYC does not match your shipping address, please click the link for more information. Learn More</p>
                 <div className="border-[2px] rounded-xl py-[29px] gap-6 border-black flex">
                 <Image src={icon} alt="img"  className="ml-6"/> 
                     <p>Deliver It</p>
@@ -160,7 +160,7 @@ const CheckOut = () => {
 <div className="flex mt-4 gap-1 flex-col sm:flex-row">
 <Image src={pic6} alt="Nike Product" className="w-full sm:w-[208px] h-auto sm:h-[208px]"></Image>
 <div>
-<p className="font-normal text-[13px]">Nike Dri-FIT ADV TechKnit Ultra Men's Short-Sleeve Running Top</p>
+<p className="font-normal text-[13px]">Nike Dri-FIT ADV TechKnit Ultra Men&apos;s Short-Sleeve Running Top</p>
 <p className="text-[#8D8D8D]">Qty 1</p>
 <p className="text-[#8D8D8D]">Size L</p>
 <p className="text-[#8D8D8D]">₹ 3 895.00</p>
@@ -172,7 +172,7 @@ const CheckOut = () => {
 <div className="flex mt-4 gap-1 flex-col sm:flex-row">
 <Image src={image4} alt="pic1" className="w-full sm:w-[208px] h-auto sm:h-[208px]"/>
 <div className="font-normal text-[13px]">
-<p>Nike Air Max 97 SE Men's Shoes</p>
+<p>Nike Air Max 97 SE Men&apos;s Shoes</p>
 <p className="text-[#8D8D8D]">Qty 1</p>
 <p className="text-[#8D8D8D]">Size UK 8</p>
 <p className="text-[#8D8D8D]">₹ 16 995.00</p>
