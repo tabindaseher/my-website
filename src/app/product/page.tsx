@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import shoe from "@/app/assets/Rectangle.png"
 import cart1 from "@/app/assets/Group (1).png";
-import Header from '../components/header'
+import Header from '../components/header';
+import Link from "next/link";
 
 export default function Product_Details () {
   return (
@@ -26,8 +27,11 @@ export default function Product_Details () {
         <p className='font-medium text-[36px] leading-[28px] mb-6'>₹ 8 695.00</p>
         {/* button */}
       <button className="rounded-[30px] py-[7.5px] pr-[23.92px] pl-[22.5px] bg-black flex justify-center items-center">
+    
         <Image src={cart1} alt='cart1' className='pr-1'/>
-      <p className="text-[#FFFFFF] font-medium text-[15px] text-center pl-1">Shop Air Max</p>
+        <Link href="/cart">
+      <p className="text-[#FFFFFF] font-medium text-[15px] text-center ">Shop Air Max</p></Link>
+ 
       </button>
       </div>
       </div>

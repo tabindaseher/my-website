@@ -81,7 +81,7 @@ const Header = () => {
          <Link href="/login" className="font-medium text-base leading-[24px]">Women</Link>
          <Link href="/join" className="font-medium text-base leading-[24px]">Kids</Link>
          <Link href="/cart" className="font-medium text-base leading-[24px]">Sale</Link>
-         <Link href="/" className="font-medium text-base leading-[24px]">SNKRS</Link>
+         <Link href="/checkout" className="font-medium text-base leading-[24px]">SNKRS</Link>
         </ul>
         </nav>
         {/* serach icon */}

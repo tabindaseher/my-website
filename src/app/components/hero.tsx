@@ -4,7 +4,8 @@ import image4 from "@/app/assets/Image (4).png";
 import image5 from "@/app/assets/Image (5).png";
 import tag1 from "@/app/assets/Frame (4).png";
 import tag2 from "@/app/assets/Frame (3).png"
-import image from "@/app/assets/Image.png"
+import image from "@/app/assets/Image.png";
+import Link from "next/link";
 
 
 export default function Hero() {
@@ -102,7 +103,10 @@ export default function Hero() {
     <p className="font-medium text-[36px] sm:text-[54px] leading-[42px] sm:leading-[60px]">STEP INTO WHAT FEELS GOOD</p>
     <p className="font-normal text-[15px] leading-[24px] mt-8 max-w-2xl mx-auto">Cause everyone should know the feeling of running in that perfect pair.</p>
     <button className="rounded-[30px]  px-2 py-[7.5px]  bg-black  mt-8">
-      <p className="text-[#FFFFFF] font-medium text-center">Find Your Shoe</p>
+     <Link href="/allProduct"> 
+      <p className="text-[#FFFFFF] font-medium text-center">
+
+        Find Your Shoe</p></Link>
       </button>
 
   </div>

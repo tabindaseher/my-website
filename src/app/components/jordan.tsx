@@ -1,6 +1,7 @@
 import Image from "next/image"
 import image10 from "@/app/assets/Image (10).png"
-import image11 from "@/app/assets/Frame (1).png"
+import image11 from "@/app/assets/Frame (1).png";
+import Link from "next/link";
 const Jordan = () => {
   return (
     <>
@@ -17,7 +18,9 @@ const Jordan = () => {
 
       {/* button of shop */}
       <button className="rounded-[30px] py-[7.5px] pr-[21.88px] pl-[21.5px] bg-black  mt-8">
+      <Link href="/product"> 
       <p className="text-[#FFFFFF] font-medium text-[14px] md:text-[16px] text-center">Shop</p>
+      </Link>
       </button>
 
   </div>

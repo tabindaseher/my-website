@@ -11,6 +11,7 @@ import logo from "@/app/assets/Frame.png";
 import searchIcon from "@/app/assets/Vector (3).png"
 import cartIcon from "@/app/assets/Vector (2).png";
 
+
  const Cart = () => {
 return (
     <>
@@ -209,8 +210,8 @@ Flat Pewter/Light Bone/Black/White
 
   {/* Checkout Button */}
   <button className="w-full sm:w-[334px] h-[60px] bg-black text-white font-medium hover:bg-gray-800 rounded-[30px] mt-6">
-    Checkout Members
-  </button>
+    <Link href="/checkout">
+    Checkout Members</Link></button>
   </div>
 </div>
 </div>
