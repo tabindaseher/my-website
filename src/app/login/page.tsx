@@ -41,7 +41,7 @@ export default function Contact(){
           </div>
 
           <p className="text-xs text-gray-500 text-center mt-6">
-            By logging in, you agree to Nike's 
+            By logging in, you agree to Nike&apos;s 
             <span className="underline"> Privacy Policy</span> and 
             <span className="underline"> Terms of Use</span>.
           </p>

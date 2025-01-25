@@ -21,7 +21,8 @@ type IProduct={
    category: string
    price: number,
    slug: string,
-   imageUrl : string
+   imageUrl : string,
+   id: number| string
 }
 
 export default async function All_Product () {
@@ -32,7 +33,8 @@ export default async function All_Product () {
   category,
   colors,
   "slug":slug.current,
- "imageUrl": image.asset->url
+ "imageUrl": image.asset->url,
+ _id
 
 }`)
   console.log(products);
@@ -154,9 +156,10 @@ export default async function All_Product () {
     {/* pic 1 */}
     {products.map((product : IProduct)=>(
 
-<Link href={`/productdet/${product.slug}`}>
+
 
     <div className="bg-white shadow-lg rounded-lg overflow-hidden" key={product._id}>
+    <Link href={`/productdet/${product.slug}`} >
      <Image src={product.imageUrl} alt={product.productName}
      width={500}
      height={500}
@@ -169,8 +172,9 @@ export default async function All_Product () {
        <p className="text-[15px] font-normal text-black mt-2">MRP : ₹ {product.price}</p>
        <button className='p-1 bg-slate-300 rounded-md text-black font-bold mt-1'>View Details</button>
       </div>
+      </Link>
     </div>
-    </Link>
+  
 ))}
 </div>
 </div>
