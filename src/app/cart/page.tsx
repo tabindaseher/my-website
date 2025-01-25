@@ -58,12 +58,12 @@ return (
     </button>
   </div>
         <ul className=" gap-6 text-base font-medium hidden sm:flex">
-        <Link href="/allProduct" className="font-medium text-base leading-[24px]" > New & Featured</Link>
-         <Link href="/product" className="font-medium text-base leading-[24px]">Men</Link>
-         <Link href="/login" className="font-medium text-base leading-[24px]">Women</Link>
-         <Link href="/join" className="font-medium text-base leading-[24px]">Kids</Link>
-         <Link href="/cart" className="font-medium text-base leading-[24px]">Sale</Link>
-         <Link href="/checkout" className="font-medium text-base leading-[24px]">SNKRS</Link>
+        <Link href="/allProduct" className="font-medium text-base leading-[24px]" > All Product</Link>
+         <Link href="/product" className="font-medium text-base leading-[24px]">Product</Link>
+         <Link href="/login" className="font-medium text-base leading-[24px]">Login</Link>
+         <Link href="/join" className="font-medium text-base leading-[24px]">Join </Link>
+         <Link href="/cart" className="font-medium text-base leading-[24px]">Home</Link>
+         <Link href="/checkout" className="font-medium text-base leading-[24px]">CheckOut</Link>
         </ul>
         {/* search */}
         <div className="bg-[#F5F5F5] rounded-[100px] w-[180px] h-10 flex justify-between items-center px-4 py-3 ">

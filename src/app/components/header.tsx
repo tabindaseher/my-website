@@ -76,12 +76,13 @@ const Header = () => {
 
   <nav className="hidden md:flex md:flex-1 md:justify-center md:items-center">
         <ul className="flex flex-col md:flex-row md:gap-4 ">
-         <Link href="/allProduct" className="font-medium text-base leading-[24px]" > New & Featured</Link>
+         <Link href="/allProduct" className="font-medium text-base leading-[24px]" >New & Featured</Link>
          <Link href="/product" className="font-medium text-base leading-[24px]">Men</Link>
          <Link href="/login" className="font-medium text-base leading-[24px]">Women</Link>
          <Link href="/join" className="font-medium text-base leading-[24px]">Kids</Link>
          <Link href="/cart" className="font-medium text-base leading-[24px]">Sale</Link>
          <Link href="/checkout" className="font-medium text-base leading-[24px]">SNKRS</Link>
+         
         </ul>
         </nav>
         {/* serach icon */}
