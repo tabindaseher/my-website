@@ -75,12 +75,21 @@ const Header = () => {
 
   <nav className="hidden md:flex md:flex-1 md:justify-center md:items-center">
         <ul className="flex flex-col md:flex-row md:gap-4 ">
+<<<<<<< HEAD
          <Link href="/allProduct" className="font-medium text-base leading-[24px]" > All Products</Link>
          <Link href="/product" className="font-medium text-base leading-[24px]">Product Details</Link>
          <Link href="/login" className="font-medium text-base leading-[24px]">Login</Link>
          <Link href="/join" className="font-medium text-base leading-[24px]">Join Us</Link>
          <Link href="/checkout" className="font-medium text-base leading-[24px]">CheckOut</Link>
          <Link href="/cartpage" className="font-medium text-base leading-[24px]">Cart</Link>
+=======
+         <Link href="/allProduct" className="font-medium text-base leading-[24px]" >New & Featured</Link>
+         <Link href="/product" className="font-medium text-base leading-[24px]">Men</Link>
+         <Link href="/login" className="font-medium text-base leading-[24px]">Women</Link>
+         <Link href="/join" className="font-medium text-base leading-[24px]">Kids</Link>
+         <Link href="/cart" className="font-medium text-base leading-[24px]">Sale</Link>
+         <Link href="/checkout" className="font-medium text-base leading-[24px]">SNKRS</Link>
+>>>>>>> 615db7511f3c98e56d4a8e980d5dc604e7fef713
          
         </ul>
         </nav>
