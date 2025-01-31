@@ -1,14 +1,31 @@
+'use client'
 import Image from "next/image";
 import logo from "@/app/assets/Image (15).png";
 import cartIcon from "@/app/assets/Vector (2).png";
 import { TbMessage } from "react-icons/tb";
 import icon from "@/app/assets/Frame (10).png";
-import pic6 from "@/app/assets/Image (6).png";
-import image4 from "@/app/assets/Image (4).png";
+
+import { IProduct } from '../../types/product'
+import { useEffect, useState } from "react";
 
 const CheckOut = () => {
+
+    const [products, setProducts] = useState<IProduct[]>([]); // You can define the type here
+   
+  
+    useEffect(() => {
+      const cart = JSON.parse(localStorage.getItem("cart") || "{}");
+      const items = Object.values(cart) as IProduct[]
+      setProducts(items);
+  
+      // const total = items.reduce((acc: number, product: IProduct ) => {
+      //   return acc + product.price * product.quantity;
+      // }, 0);
+    
+    }, []);
   return (
     < div>
+  
     {/* header */}
         <header className="flex justify-between px-2 mx-w-3xl mx-auto items-center h-auto mt-6">
             {/* logo */}
@@ -35,100 +52,139 @@ const CheckOut = () => {
                 {/* form */}
                 <div className="w-full sm:w-[440px] mt-8">
                     <h2 className="font-medium text-xl py-8">Enter your name and address:</h2>
-                    <div className="flex flex-col  space-y-3">
-                    
-                    <label className="py-4 pl-4 pr-[341px] rounded-[4px] border " >
-                        <p>First Name</p>
-                    </label>
+                    <div className="flex flex-col space-y-3">
+  <div className="relative">
 
-                    <label className="py-4 pl-4 pr-[341px] rounded-[4px]  border">
-                        <p>Last Name</p>
-                    </label>
-                    <label className="py-4 pl-4  rounded-[4px] border" >
-                        <p>Address Line 1</p>
-                    </label>
-                    <label className="py-4 pl-4 rounded-[4px] border">
-                        <p>Address Line 2</p>
-                    </label>
-                    <label className="py-4 pl-4 rounded-[4px] border">
-                    <p>Address Line 3</p>
-                    </label>
-              
-                   <div className=" flex gap-4">
-                    <label  className="py-4 pl-4  rounded-[4px] border  w-[211.9px] ">
-                        <p>Postal Code</p>
-                    </label>
-                    <label  className="py-4 pl-4  rounded-[4px] border w-[211.9px] ">
-                   <p> Locality</p>
-                    </label>
-                </div>
+    <input
+      type="text"
+      className="py-4 pl-4 pr-[341px] rounded-[4px] border w-full"
+      placeholder=" First Name"
+    />
+  </div>
 
-                <div className=" flex gap-4">
-                    <label className="py-4 pl-4  rounded-[4px] border  w-[211.9px] ">
-                    <p>State/Terrority</p>
-                    </label>
-                    <label className="py-4 pl-4  rounded-[4px] border w-[211.9px] ">
-                    <p>India</p>
-                    </label>
-                </div>
-                <div className="flex items-center gap-4">
-                <div className="w-[17px] h-[17px] border-[1px] rounded-[4px]"></div>
-                <p>Save this address to my profile</p>
-                </div>
+  <div className="relative">
 
-                <div className="flex items-center gap-4">
-                <div className="w-[17px] h-[17px] border-[1px] bg-[#CCCCCC] rounded-[4px]"></div>
-                <p>Make this my preferred address</p>
-                </div>
+    <input
+      type="text"
+      className="py-4 pl-4 pr-[341px] rounded-[4px] border w-full"
+      placeholder=" Last Name"
+    />
+  </div>
 
-                <h2 className="font-medium text-xl py-8">What&apos;s your contact information?</h2>
-                <label className="py-4 pl-4  rounded-[4px] border">
-                    <p>Email</p>
-                </label>
-                <p className="text-[#757575] font-normal text-xs">A confirmation email will be sent after checkout.</p>
-                <label className="py-4 pl-4 rounded-[4px] border">
-                    <p>Phone Number</p>
-                </label>
-                <p className="text-[#757575] font-normal text-xs">A carrier might contact you to confirm delivery.</p>
-                <h2 className="font-medium text-xl py-8">What&apos;s your PAN?</h2>
-                <label className="py-4 pl-4  rounded-[4px] border">
-                    <p>PAN</p>
-                </label>
-                <p className="text-[#757575] font-normal">Enter your PAN to enable payment with UPI, Net Banking or local card methods</p>
-              
-                
-                <div className="flex items-center gap-4 mt-4">
-                <div className="w-[17px] h-[17px] border-[1px] rounded-[4px]"></div>
-                <p className="text-[#757575] font-normal text-xs">Save PAN details to Nike Profile</p>
-                </div>
+  <div className="relative">
 
-                <div className="flex  gap-4 py-8 ">
-                <div className="w-[38px] h-[17px] border-[1px] rounded-[4px]"></div>
-                <p className="text-[#757575] font-normal text-xs">I have read and consent to eShopWorld processing my information in accordance with the Privacy Statement and Cookie Policy. eShopWorld is a trusted Nike partner.</p>
-                 </div>
+    <input
+      type="text"
+      className="py-4 pl-4 rounded-[4px] border w-full"
+      placeholder="Enter Address Line 1"
+    />
+  </div>
+
+  <div className="relative">
+
+    <input
+      type="text"
+      className="py-4 pl-4 rounded-[4px] border w-full"
+      placeholder="Enter Address Line 2"
+    />
+  </div>
+
+  <div className="relative">
  
-                <div className="py-4 pb-4 bg-[#F5F5F5] rounded-[30px] h-16 text-center">
-                    <p className="text-[#757575] ">continue</p></div>
-                <div className="py-8">
-                <div className=" border-t pt-4 py-2"></div>
-                <h3 className="text-[#111111] font-medium text-[20px] py-2">Delivery</h3>
-                <div className=" border-t pt-4 py-2"></div>
-                <h3 className="font-medium text-xl py-2 text-[#757575]">Shipping</h3>
-                <div className=" border-t pt-4 py-2"></div>
-                <h3 className="font-medium text-xl py-2 text-[#757575]">Billing</h3>
-                <div className=" border-t pt-4 py-2"></div>
-                <h3 className="font-medium text-xl py-2 text-[#757575]">Payment</h3>
-                </div>
+    <input
+      type="text"
+      className="py-4 pl-4 rounded-[4px] border w-full"
+      placeholder="Enter Address Line 3"
+    />
+  </div>
 
-                    </div>
+  <div className="flex gap-4">
+    <div className="relative w-[211.9px]">
+   
+      <input
+        type="text"
+        className="py-4 pl-4 rounded-[4px] border w-full"
+        placeholder="Enter Postal Code"
+      />
+    </div>
+
+    <div className="relative w-[211.9px]">
+  
+      <input
+        type="text"
+        className="py-4 pl-4 rounded-[4px] border w-full"
+        placeholder="Enter Locality"
+      />
+    </div>
+  </div>
+
+  <div className="flex gap-4">
+    <div className="relative w-[211.9px]">
+  
+      <input
+        type="text"
+        className="py-4 pl-4 rounded-[4px] border w-full"
+        placeholder="Enter Postal Code"
+      />
+    </div>
+
+    <div className="relative w-[211.9px]">
+   
+      <input
+        type="text"
+        className="py-4 pl-4 rounded-[4px] border w-full"
+        placeholder="Enter Locality"
+      />
+    </div>
+  </div>
+
+
+  <div className="flex items-center gap-4">
+    <input type="checkbox" className="w-[17px] h-[17px] border-[1px] rounded-[4px]" />
+    <p>Save this address to my profile</p>
+  </div>
+
+  <div className="flex items-center gap-4">
+    <input type="checkbox" className="w-[17px] h-[17px] border-[1px] bg-[#CCCCCC] rounded-[4px]" />
+    <p>Make this my preferred address</p>
+  </div>
+
+  <h2 className="font-medium text-xl py-8">What&apos;s your contact information?</h2>
+  
+  <div className="relative">
+   
+    <input
+      type="email"
+      className="py-4 pl-4 rounded-[4px] border w-full"
+      placeholder="Enter your email"
+    />
+  </div>
+  <p className="text-[#757575] font-normal text-xs">A confirmation email will be sent after checkout.</p>
+
+  <div className="relative">
+   
+    <input
+      type="text"
+      className="py-4 pl-4 rounded-[4px] border w-full"
+      placeholder="Enter your phone number"
+    />
+  </div>
+  <p className="text-[#757575] font-normal text-xs">A carrier might contact you to confirm delivery.</p>
+</div>
+
                   
             </div>
             </div>
-
+       
             {/* right side  */}
             <div className="w-full sm:w-[350.67px] mx-auto p-6 sm:p-8 h-auto">
+            
+              
+         
+          
   {/* Summary Heading*/}
     <div className="space-y-4 mb-auto ">
+
     <h2 className="text-[18px] sm:text-[21px] font-medium leading-[28px] sm:leading-[33px]">Summary</h2>
 
     {/* Subtotal */}
@@ -146,7 +202,7 @@ const CheckOut = () => {
     {/* Total amount */}
     <div className="flex justify-between items-center border-t pt-4">
       <p className="font-normal text-[14px]">Total</p>
-      <p className="font-normal text-[14px]">₹ 20 890.00</p>
+      <p className="font-normal text-[14px]">$ 20 890.00</p>
       </div>
     
   </div>
@@ -157,33 +213,50 @@ const CheckOut = () => {
 <h3 className="font-bold text-[15px] mt-4">Arrives Mon, 27 Mar - Wed, 12 Apr</h3>
 {/* Men short-Sleeve  */}
 
-<div className="flex mt-4 gap-1 flex-col sm:flex-row">
-<Image src={pic6} alt="Nike Product" className="w-full sm:w-[208px] h-auto sm:h-[208px]"></Image>
-<div>
-<p className="font-normal text-[13px]">Nike Dri-FIT ADV TechKnit Ultra Men&apos;s Short-Sleeve Running Top</p>
-<p className="text-[#8D8D8D]">Qty 1</p>
-<p className="text-[#8D8D8D]">Size L</p>
-<p className="text-[#8D8D8D]">₹ 3 895.00</p>
-</div>
+<div className="flex flex-wrap gap-4 mt-4">
+{products.map((item) => (
+    <div key={item._id} className="flex sm:flex-row flex-col items-center sm:items-start gap-4">
+      {/* Product Image */}
+      <Image
+        src={item.imageUrl}
+        alt={item.productName}
+        width={300}
+        height={300}
+        className="w-full sm:w-[208px] h-auto sm:h-[208px]"
+      />
+      {/* Product Details */}
+      <div className="text-center sm:text-left">
+        <p className="font-normal text-[13px]">{item.productName}</p>
+        <p className="text-[#8D8D8D]">{item.quantity}</p>
+        <p className="text-[#8D8D8D]">{item.colors}</p>
+        <p className="text-[#8D8D8D]">₹ {item.price}</p>
+      </div>
+    </div>
+))}
+
 </div>
 
 
-{/* foot image */}
-<div className="flex mt-4 gap-1 flex-col sm:flex-row">
-<Image src={image4} alt="pic1" className="w-full sm:w-[208px] h-auto sm:h-[208px]"/>
-<div className="font-normal text-[13px]">
-<p>Nike Air Max 97 SE Men&apos;s Shoes</p>
-<p className="text-[#8D8D8D]">Qty 1</p>
-<p className="text-[#8D8D8D]">Size UK 8</p>
-<p className="text-[#8D8D8D]">₹ 16 995.00</p>
-</div>
-</div>
 
+
+
+     
      </div>
+
+
+
          </section>
+ 
 
     </div>
   )
 }
 
 export default CheckOut
+
+
+
+
+
+
+

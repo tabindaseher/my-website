@@ -4,69 +4,85 @@ import Header from '../components/header'
 const JoinUs = () => {
   return (
     <>
-    <Header/> 
-    <div className=" m-auto xl:w-[25%] my-10 gap-5 lg:w-[35%] md:w-[50%] sm:w-[100%] px-4 flex flex-col h-[100%] justify-center items-center text-center">
-     {/* logo */}
-        <Image src={logo} alt="img" />
-        {/* heading */}
-        <h1 className="font-bold text-lg leading-[26px] text-center ">BECOME A NIKE MEMBER</h1>
-        {/* para */}
-        <p className="font-normal text-sm leading-[22px] text-center text-[#8D8D8D] ">Create your Nike Member profile and get first access to the very best of Nike products, inspiration and community.</p>
-         
+    <Header />
+    <div className="m-auto xl:w-[25%] my-10 gap-5 lg:w-[35%] md:w-[50%] sm:w-full px-4 flex flex-col justify-center items-center text-center">
+      {/* Logo */}
+      <Image src={logo} alt="Nike logo" />
 
-        {/*  join us form */}
+      {/* Heading */}
+      <h1 className="font-bold text-lg text-center mt-4">
+        BECOME A NIKE MEMBER
+      </h1>
 
-         <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="Email address"/>
+      {/* Paragraph */}
+      <p className="font-normal text-sm text-center text-gray-500 mt-2">
+        Create your Nike Member profile and get first access to the very best
+        of Nike products, inspiration, and community.
+      </p>
+
+      {/* Join Us Form */}
+      <form className="w-full flex flex-col gap-4 mt-6">
+        <input
+          className="w-full h-10 rounded border px-4"
+          type="email"
+          placeholder="Email address"
+        />
+        <input
+          className="w-full h-10 rounded border px-4"
+          type="password"
+          placeholder="Password"
+        />
+        <input
+          className="w-full h-10 rounded border px-4"
+          type="text"
+          placeholder="First Name"
+        />
+        <input
+          className="w-full h-10 rounded border px-4"
+          type="text"
+          placeholder="Last Name"
+        />
+        <input
+          className="w-full h-10 rounded border px-4"
+          type="date"
+          placeholder="Date of Birth"
+        />
+        <p className="text-gray-500 text-xs mt-1">
+          Get a Nike Member Reward every year on your birthday.
+        </p>
+        <input
+          className="w-full h-10 rounded border px-4"
+          type="text"
+          placeholder="Country/Region"
+        />
+        <div className="flex items-center gap-2 mt-2">
+          <input type="checkbox" className="w-5 h-5 border rounded" />
+          <p className="text-gray-500 text-xs">
+            Sign up for emails to get updates from Nike on products, offers,
+            and your Member benefits.
+          </p>
         </div>
+      </form>
 
-        <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="Password"/>
-        </div>
-        <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="First Name"/>
-        </div>
+      {/* Terms and Privacy */}
+      <p className="text-gray-500 text-xs mt-4">
+        By creating an account, you agree to Nike&apos;s{" "}
+        <span className="underline">Privacy Policy</span> and{" "}
+        <span className="underline">Terms of Use</span>.
+      </p>
 
-        <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="Last Name"/>
-        </div>
+      {/* Join Us Button */}
+      <button className="w-full h-10 bg-black text-white rounded mt-4">
+        JOIN US
+      </button>
 
-        <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="Date Of Birth"/>
-        </div>
-        <p className="text-[#8D8D8D] text-[11px] font-normal ">Get a Nike Member Reward every year on your Birthday.</p>
-
-        <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="India"/>
-        </div>
-
-        <div className="w-full h-[40px] top-[5px] rounded-[3px] border-[1px] bg-white ">
-         <input className="w-[290px] h-[16px] top-[12px] left-[17px] " type="input" placeholder="India"/>
-
-        </div>
-
-        <div className="w-full h-[28px] flex ">
-            <div className="w-[20px] h-[20px] rounded-[3px] border-[1px] "></div>
-            <p className="text-[#8D8D8D] text-[11px] font-normal ">Sign up for emails to get updates from Nike on products, offers and your Member benefits</p>
-        </div>
-
-        <div className="w-full h-[59px] ">
-   
-            <p className="text-[#8D8D8D] text-[11px] font-normal  leading-[16px]">By creating an account, you agree to Nike&apos;s <span className="underline">Privacy Policy</span> and <span className="underline">Terms of Use.</span></p>
-        </div>
-        {/* join us button */}
-        <div className="w-full h-[40px]  rounded-[3px] border-[1px] bg-[#000000] flex items-center justify-center ">
-          <p className="w-[60px] h-[17px] top-[11px] left-[132.5px] font-normal text-[15px] leading-[17px] text-center text-white ">JOIN US</p>
-        </div>
-{/*  already members */}
-        <div className="w-full h-[24px] top-[776px] flex justify-center  ">
-          <p className="w-full h-[14px] top-[10px] left-[87.63px]  font-normal text-xs leading-[14px] text-center text-[#8D8D8D]">Already a Member?<span className="font-normal text-xs leading-[14px] text-center underline border-solid text-black">Sign In.</span></p>
-        </div>
-
-        
-
+      {/* Already a Member */}
+      <p className="text-gray-500 text-xs mt-4">
+        Already a Member?{" "}
+        <span className="underline text-black">Sign In.</span>
+      </p>
     </div>
-    </>
+  </>
   )
 }
  

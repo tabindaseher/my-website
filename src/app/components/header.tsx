@@ -6,7 +6,6 @@ import topLogo from "@/app/assets/Vector.png"
 import logo from "@/app/assets/Frame.png"
 import wishlistIcon from "@/app/assets/Vector (1).png"
 import cartIcon from "@/app/assets/Vector (2).png"
-import searchIcon from "@/app/assets/Vector (3).png"
 import Link from "next/link";
 import { useState } from "react";
 
@@ -76,23 +75,23 @@ const Header = () => {
 
   <nav className="hidden md:flex md:flex-1 md:justify-center md:items-center">
         <ul className="flex flex-col md:flex-row md:gap-4 ">
-         <Link href="/allProduct" className="font-medium text-base leading-[24px]" > New & Featured</Link>
-         <Link href="/product" className="font-medium text-base leading-[24px]">Men</Link>
-         <Link href="/login" className="font-medium text-base leading-[24px]">Women</Link>
-         <Link href="/join" className="font-medium text-base leading-[24px]">Kids</Link>
-         <Link href="/cart" className="font-medium text-base leading-[24px]">Sale</Link>
-         <Link href="/checkout" className="font-medium text-base leading-[24px]">SNKRS</Link>
+         <Link href="/allProduct" className="font-medium text-base leading-[24px]" > All Products</Link>
+         <Link href="/product" className="font-medium text-base leading-[24px]">Product Details</Link>
+         <Link href="/login" className="font-medium text-base leading-[24px]">Login</Link>
+         <Link href="/join" className="font-medium text-base leading-[24px]">Join Us</Link>
+         <Link href="/checkout" className="font-medium text-base leading-[24px]">CheckOut</Link>
+         <Link href="/cartpage" className="font-medium text-base leading-[24px]">Cart</Link>
+         
         </ul>
         </nav>
         {/* serach icon */}
         <div className="hidden md:flex bg-[#F5F5F5] rounded-[100px] w-[180px] h-10 items-center px-4">
-          <Image src={searchIcon} alt="search" aria-label="search"  className="w-[16.72px] h-[16.72px] "/>
-          <input type="input" placeholder="Search" className="bg-[#F5F5F5] focus-visible:outline-none w-full h-full px-2"/>
+           <input type="input" placeholder="Search" className="bg-[#F5F5F5] focus-visible:outline-none w-full h-full px-2"/>
         </div>
         {/* cart icon */}
         <div className="flex gap-3 items-center">
         <Image src={wishlistIcon} alt="wishlist" aria-label="wishlist" className="w-[19.5px] h-[16.76px]"/>
-        <Image src={cartIcon} alt="cart" aria-label="cart" className="w-[16.5px] h-[16.5px]"/>
+        <Link href="/cartpage"><Image src={cartIcon} alt="cart" aria-label="cart" className="w-[16.5px] h-[16.5px]"/></Link>
         </div>
       </div>
 
