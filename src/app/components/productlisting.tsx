@@ -1,11 +1,12 @@
-
+ /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
-import { IProduct } from '../../types/product'
+
 
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import { IProduct } from "../../../types/product";
 
 <meta
   name="format-detection"

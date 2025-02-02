@@ -3,10 +3,11 @@
 
 
 
-import { IProduct } from '../../types/product'
+
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { IProduct } from '../../../types/product';
 
 
 interface CartProps {
