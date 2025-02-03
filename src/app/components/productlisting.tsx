@@ -3,7 +3,7 @@
 
 
 import Image from "next/image";
-import Link from "next/link";
+
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 import { IProduct } from "../../../types/product";
@@ -90,11 +90,11 @@ const ProductListing = ({ products }: { products: IProduct[] }) => {
   >
     Add to cart
   </button>
-  <Link href={`/productdet/${product.slug}`}>
+  {/* <Link href={`/productdet/${product.slug}`}> */}
     <button className="bg-gray-300 rounded-md p-2 mt-2 font-bold border-black w-full sm:w-auto sm:ml-2">
       View Details
     </button>
-  </Link>
+  {/* </Link> */}
 </div>
 
             </div>
