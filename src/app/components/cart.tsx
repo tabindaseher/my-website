@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation'
 import { IProduct } from '../../../types/product';
 
 
+
 interface CartProps {
   initialProducts?: IProduct[];  // Allow passing products as props (optional)
 }
@@ -97,79 +98,78 @@ const Cart = ({ initialProducts }: CartProps) => {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
-      <h2 className="text-4xl font-bold text-center mb-6 underline">Your Cart</h2>
-
-      <div className="flex flex-col space-y-6">
-        {products.map((item) => (
-          <div key={item.productName} className="flex items-center justify-between p-4 border-b">
+    <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
+    <h2 className="text-4xl font-bold text-center mb-6 underline">Shopping Cart</h2>
+  
+    <div className="flex flex-col space-y-6">
+      {products.map((item) => (
+        <div key={item.productName} className="flex flex-col sm:flex-row items-center justify-between p-4 border-b">
+          <div className="flex items-center gap-4 sm:w-2/3">
+            <Image 
+              src={item.imageUrl} 
+              alt={item.productName}
+              width={100}
+              height={100}
+              className="rounded-lg object-cover" 
+            />
+            <p className="text-xl font-semibold">{item.productName}</p>
+          </div>
+  
+          <div className="flex flex-col sm:flex-row items-center space-x-4 sm:w-1/3 sm:justify-between mt-4 sm:mt-0">
             <div className="flex items-center gap-4">
-              <Image 
-                src={item.imageUrl} 
-                alt={item.productName}
-                width={100}
-                height={100}
-                className="rounded-lg object-cover" 
-              />
-              <p className="text-xl font-semibold">{item.productName}</p>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center gap-4">
-                <button 
-                  onClick={() => handleDecreaseQuantity(item.productName)} 
-                  className="px-2 py-1 bg-gray-200 rounded-md"
-                >
-                  -
-                </button>
-                <p className="font-medium text-lg">{item.quantity}</p>
-                <button 
-                  onClick={() => handleIncreaseQuantity(item.productName)} 
-                  className="px-2 py-1 bg-gray-200 rounded-md"
-                >
-                  +
-                </button>
-              </div>
-
-              <p className="font-medium text-lg">${item.price.toFixed(2)}</p>
-              <p className="font-medium text-lg text-green-600">${((item.quantity ?? 0) * item.price).toFixed(2)}</p>
-
               <button 
-                onClick={() => handleRemoveItem(item.productName)} 
-                className="text-black hover:bg-red-700 p-2 bg-red-600 rounded-lg hover:font-bold"
+                onClick={() => handleDecreaseQuantity(item.productName)} 
+                className="px-2 py-1 bg-gray-200 rounded-md"
               >
-                Remove
+                -
+              </button>
+              <p className="font-medium text-lg">{item.quantity}</p>
+              <button 
+                onClick={() => handleIncreaseQuantity(item.productName)} 
+                className="px-2 py-1 bg-gray-200 rounded-md"
+              >
+                +
               </button>
             </div>
+  
+            <p className="font-medium text-lg">${item.price.toFixed(2)}</p>
+            <p className="font-medium text-lg text-green-600">${((item.quantity ?? 0) * item.price).toFixed(2)}</p>
+  
+            <button 
+              onClick={() => handleRemoveItem(item.productName)} 
+              className="text-white hover:bg-red-700 p-2 bg-red-600 rounded-lg hover:font-bold mt-4 sm:mt-0 sm:self-start sm:ml-8"
+            >
+              Remove
+            </button>
           </div>
-        ))}
-      </div>
-
-      <div className="flex justify-between mt-8 font-bold text-xl">
-        <span>Total Amount</span>
-        <span>${totalAmount.toFixed(2)}</span>
-      </div>
-
-      <div className="flex justify-between mt-6">
-        <button 
-          onClick={handleClearCart} 
-          className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
-        >
-          Clear Cart
-        </button>
-
-        <button 
-          onClick={handleCheckout} 
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
-        >
-          Proceed to Checkout
-        </button>
-      </div>
+        </div>
+      ))}
     </div>
-
-   
-      
-
+  
+    <div className="flex justify-between mt-8 font-bold text-xl">
+      <span>Total Amount</span>
+      <span>${totalAmount.toFixed(2)}</span>
+    </div>
+  
+    <div className="flex flex-col sm:flex-row justify-between mt-6">
+      <button 
+        onClick={handleClearCart} 
+        className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 mb-4 sm:mb-0"
+      >
+        Clear Cart
+      </button>
+  
+      <button 
+        onClick={handleCheckout} 
+        className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+      >
+        Proceed to Checkout
+      </button>
+    </div>
+  </div>
+  
+  
+  
   )
 }
 

@@ -20,7 +20,7 @@ export default async function All_Product () {
   price,
   category,
   colors,
-  "slug":slug.current,
+  slug,
  "imageUrl": image.asset->url,
  _id
 
@@ -117,30 +117,6 @@ export default async function All_Product () {
             {/* PRODUCT LISTING */}
             <ProductListing products={products} />
   
-            {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* pic 1 */}
-              {/* {products.map((product: IProduct) => (
-                <div className="bg-white shadow-lg rounded-lg overflow-hidden" key={product._id}>
-                  <Link href={`/productdet/${product.slug}`}>
-                    <Image
-                      src={product.imageUrl}
-                      alt={product.productName}
-                      width={500}
-                      height={500}
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="p-4">
-                      <p className="font-medium text-[15px] mt-2 text-[#9E3500]">{product.status}</p>
-                      <p className="text-[15px] font-normal text-black">{product.productName}</p>
-                      <p className="text-[15px] font-normal text-[#757575]">{product.category}</p>
-                      <p className="text-[15px] font-normal text-[#757575]">{product.colors}</p>
-                      <p className="text-[15px] font-normal text-black mt-2">MRP : ₹ {product.price}</p>
-                      <button className='p-1 bg-slate-300 rounded-md text-black font-bold mt-1'>View Details</button>
-                    </div>
-                  </Link>
-                </div>
-              ))} */}
-            {/*</div> */}
           </div>
         </div>
   

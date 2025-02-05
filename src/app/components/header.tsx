@@ -8,6 +8,8 @@ import wishlistIcon from "@/app/assets/Vector (1).png"
 import cartIcon from "@/app/assets/Vector (2).png"
 import Link from "next/link";
 import { useState } from "react";
+import { UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
 
 
 const Header = () => {
@@ -53,7 +55,14 @@ const Header = () => {
            </li>
 
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            <Link href="/login">Sign In</Link>
+            {/* <Link href="/login">Sign In</Link> */}
+            <SignedIn>
+            <UserButton />
+          </SignedIn>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+
          
            </li>
 </ul>
@@ -88,10 +97,7 @@ const Header = () => {
          
         </ul>
         </nav>
-        {/* serach icon */}
-        <div className="hidden md:flex bg-[#F5F5F5] rounded-[100px] w-[180px] h-10 items-center px-4">
-           <input type="input" placeholder="Search" className="bg-[#F5F5F5] focus-visible:outline-none w-full h-full px-2"/>
-        </div>
+        
         {/* cart icon */}
         <div className="flex gap-3 items-center">
         <Image src={wishlistIcon} alt="wishlist" aria-label="wishlist" className="w-[19.5px] h-[16.76px]"/>
