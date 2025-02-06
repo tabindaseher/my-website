@@ -8,7 +8,8 @@ const Jordan = () => {
         <div className="mt-16 px-5">
        <p className="font-medium text-[22px] leading-[28px] mb-6">Don&apos; t Miss</p>
        {/* Image */}
-      <Image src={image10} alt="pic5" className="w-full h-auto object-cover rounded-md"/>
+      <Image src={image10} alt="pic5" 
+      width={800} height={800} className="w-full h-auto object-cover rounded-md"/>
       {/* flight Essential Heading */}
       <div className="text-center mt-10">
        <p className="font-medium text-[32px] md:text-[40px] lg:text-[52px] leading-tight">FLIGHT ESSENTIALS</p>
@@ -31,7 +32,9 @@ const Jordan = () => {
       {/* The Essential */}
     <p className="font-medium text-[22px] leading-[28px] mb-6">The Essentials</p>
     {/* Images  */}
-     <Image src={image11} alt="pic5" className="w-full h-auto object-cover rounded-md"/>
+     <Image src={image11}
+     width={400}
+     height={400} alt="pic5" className="w-full h-auto object-cover rounded-md"/>
     </div>
 
     </>

@@ -1,13 +1,7 @@
  /* eslint-disable @typescript-eslint/no-unused-vars */
  /* eslint-disable react/no-unescaped-entities */
 
- import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton
-} from '@clerk/nextjs';
+
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -41,15 +35,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+ 
       <html lang="en">
         <body>
-          
-         
+      
           {children}
           <Footer/>
         </body>
       </html>
-    </ClerkProvider>
+
   );
 }

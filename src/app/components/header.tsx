@@ -8,8 +8,7 @@ import wishlistIcon from "@/app/assets/Vector (1).png"
 import cartIcon from "@/app/assets/Vector (2).png"
 import Link from "next/link";
 import { useState } from "react";
-import { UserButton } from "@clerk/nextjs";
-import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+
 
 
 const Header = () => {
@@ -24,7 +23,10 @@ const Header = () => {
    
     {/*TopHeader*/}
       <div className="flex justify-between items-center py-[10px] pr-[6.13px] pl-3 gap-[15.38px] bg-[#F5F5F5]">
-        <Image src={topLogo} alt="toplogo" className="w-[19.2px] h-[17.97px]"/>
+        <Image src={topLogo} 
+         alt="toplogo"
+         height={50}
+         width={50} className="w-[19.2px] h-[17.97px]"/>
 
         <button
         onClick={toggleMenu}
@@ -55,13 +57,10 @@ const Header = () => {
            </li>
 
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
-            {/* <Link href="/login">Sign In</Link> */}
-            <SignedIn>
-            <UserButton />
-          </SignedIn>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
+            <Link href="/login">
+           Login
+       
+          </Link>
 
          
            </li>
@@ -71,7 +70,9 @@ const Header = () => {
        {/*NavBar*/}   
       <div className="flex flex-wrap py-4 justify-between items-center px-4 ">
 
-        <Image src={logo} alt="logo" className="h-10 w-auto"/>
+        <Image src={logo} alt="logo"
+        height={50}
+        width={50} className="h-10 w-auto"/>
 
          {/* Hamburger Menu for Small Screens */}
   <div className="block md:hidden">
@@ -86,21 +87,20 @@ const Header = () => {
         <ul className="flex flex-col md:flex-row md:gap-4 ">
 
          <Link href="/allProduct" className="font-medium text-base leading-[24px]" > All Products</Link>
-         <Link href="/product" className="font-medium text-base leading-[24px]">Product Details</Link>
-         <Link href="/login" className="font-medium text-base leading-[24px]">Login</Link>
          <Link href="/join" className="font-medium text-base leading-[24px]">Join Us</Link>
-         <Link href="/checkout" className="font-medium text-base leading-[24px]">CheckOut</Link>
+         <Link href="/contact" className="font-medium text-base leading-[24px]">Contact</Link>
          <Link href="/cartpage" className="font-medium text-base leading-[24px]">Cart</Link>
+         <Link href="/checkout" className="font-medium text-base leading-[24px]">CheckOut</Link>
+         <Link href="/order" className="font-medium text-base leading-[24px]">Order</Link>
 
-         
-
-         
         </ul>
         </nav>
         
         {/* cart icon */}
         <div className="flex gap-3 items-center">
-        <Image src={wishlistIcon} alt="wishlist" aria-label="wishlist" className="w-[19.5px] h-[16.76px]"/>
+        <Image src={wishlistIcon} alt="wishlist" 
+        height={50}
+        width={50} aria-label="wishlist" className="w-[19.5px] h-[16.76px]"/>
         <Link href="/cartpage"><Image src={cartIcon} alt="cart" aria-label="cart" className="w-[16.5px] h-[16.5px]"/></Link>
         </div>
       </div>

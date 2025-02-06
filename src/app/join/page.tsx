@@ -1,26 +1,37 @@
 import Image from "next/image"
 import logo from "@/app/assets/Image (15).png";
 import Header from '../components/header'
+
+
+
 const JoinUs = () => {
   return (
     <>
+   
     <Header />
+
     <div className="m-auto xl:w-[25%] my-10 gap-5 lg:w-[35%] md:w-[50%] sm:w-full px-4 flex flex-col justify-center items-center text-center">
+
       {/* Logo */}
-      <Image src={logo} alt="Nike logo" />
+      <Image src={logo} alt="Nike logo"
+      height={50}
+      width={50} />
 
       {/* Heading */}
       <h1 className="font-bold text-lg text-center mt-4">
         BECOME A NIKE MEMBER
       </h1>
-
+   
       {/* Paragraph */}
+
       <p className="font-normal text-sm text-center text-gray-500 mt-2">
         Create your Nike Member profile and get first access to the very best
         of Nike products, inspiration, and community.
       </p>
+  
 
       {/* Join Us Form */}
+
       <form className="w-full flex flex-col gap-4 mt-6">
         <input
           className="w-full h-10 rounded border px-4"
@@ -63,6 +74,8 @@ const JoinUs = () => {
           </p>
         </div>
       </form>
+  
+
 
       {/* Terms and Privacy */}
       <p className="text-gray-500 text-xs mt-4">
@@ -72,16 +85,21 @@ const JoinUs = () => {
       </p>
 
       {/* Join Us Button */}
-      <button className="w-full h-10 bg-black text-white rounded mt-4">
-        JOIN US
-      </button>
-
+      <p className="w-full h-10 bg-black text-white rounded mt-4">
+      
+    Join Us
+      </p>
+     
+      
       {/* Already a Member */}
       <p className="text-gray-500 text-xs mt-4">
         Already a Member?{" "}
         <span className="underline text-black">Sign In.</span>
       </p>
+
+ 
     </div>
+  
   </>
   )
 }

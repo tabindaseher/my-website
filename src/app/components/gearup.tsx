@@ -34,7 +34,9 @@ const GearUp = () => {
               className="w-[48px] h-[48px] rounded-full bg-[#F5F5F5] flex items-center justify-center"
               onClick={() => handleRedirect('men')} // Trigger redirection to men's section
             >
-              <Image src={tag1} alt="Men's Tag" />
+              <Image src={tag1} alt="Men's Tag"
+              height={50}
+              width={50} />
             </button>
             <button
               className="w-[48px] h-[48px] rounded-full bg-[#F5F5F5] flex items-center justify-center"
@@ -51,13 +53,17 @@ const GearUp = () => {
               className="w-[48px] h-[48px] rounded-full bg-[#F5F5F5] pl-2"
               onClick={() => handleRedirect('women')} // Trigger redirection to women's section
             >
-              <Image src={tag1} alt="Women's Tag" />
+              <Image src={tag1} alt="Women's Tag"
+              height={50}
+              width={50} />
             </button>
             <button
               className="w-[48px] h-[48px] rounded-full bg-[#E5E5E5] pl-3"
               onClick={() => handleRedirect('men')} // Trigger redirection to men's section
             >
-              <Image src={tag2} alt="Men's Tag" />
+              <Image src={tag2} alt="Men's Tag"
+              height={50}
+              width={50} />
             </button>
           </div>
         </div>

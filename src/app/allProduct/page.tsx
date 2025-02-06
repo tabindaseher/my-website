@@ -2,9 +2,6 @@
 import { client } from '@/sanity/lib/client'
 import ProductListing from '../components/productlisting'
 
-
-
-
 import Image from 'next/image' 
 
 import filter from "@/app/assets/Frame (5).png"
@@ -13,14 +10,17 @@ import arrow from "@/app/assets/Frame (7).png"
 import Header from '../components/header'
 import { IProduct } from '../../../types/product'
 
+
+
 export default async function All_Product () {
+
   const products : IProduct[] =await client.fetch(`
       *[_type == 'product'] {
   productName,
   price,
   category,
   colors,
-  slug,
+slug,
  "imageUrl": image.asset->url,
  _id
 
@@ -37,7 +37,9 @@ export default async function All_Product () {
             <p className='font-medium text-[16px]'>Hide Filters</p>
             <Image src={filter} alt="filter" />
             <p className='font-medium text-[15px] '>Sort By</p>
-            <Image src={sort} alt="sort" className='w-[14px] h-[14px]' />
+            <Image src={sort} alt="sort"
+            height={40}
+            width={40} className='w-[14px] h-[14px]' />
           </div>
         </div>
         <div className='md:flex'>
@@ -64,7 +66,9 @@ export default async function All_Product () {
               {/* Gender Section */}
               <div className="flex items-center justify-between py-2">
                 <p className="text-sm font-medium">Gender</p>
-                <Image src={arrow} alt="Arrow icon" className="h-4 w-4" />
+                <Image src={arrow} alt="Arrow icon"
+                height={40}
+                width={40} className="h-4 w-4" />
               </div>
               <div className="flex flex-col gap-2">
                 {['Men', 'Women', 'Unisex'].map((label) => (
@@ -81,7 +85,9 @@ export default async function All_Product () {
               {/* Kids Section */}
               <div className="flex items-center justify-between py-2">
                 <p className="text-sm font-medium">Kids</p>
-                <Image src={arrow} alt="Arrow icon" className="h-4 w-4" />
+                <Image src={arrow} alt="Arrow icon"
+                height={40}
+                width={40} className="h-4 w-4" />
               </div>
               <div className="flex flex-col gap-2">
                 {['Boys', 'Girls'].map((label) => (
@@ -97,7 +103,9 @@ export default async function All_Product () {
               {/* Shop By Price Section */}
               <div className="flex items-center justify-between py-2">
                 <p className="text-sm font-medium">Shop By Price</p>
-                <Image src={arrow} alt="Arrow icon" className="h-4 w-4" />
+                <Image src={arrow} alt="Arrow icon"
+                height={50}
+                width={50} className="h-4 w-4" />
               </div>
               <div className="flex flex-col gap-2">
                 {['Under ₹ 2 500.00', '₹ 2 501.00 - ₹ 7 500.00'].map((label) => (
@@ -115,7 +123,9 @@ export default async function All_Product () {
           {/* Right side */}
           <div className="container mx-auto p-4">
             {/* PRODUCT LISTING */}
+           
             <ProductListing products={products} />
+
   
           </div>
         </div>
@@ -146,7 +156,4 @@ export default async function All_Product () {
     );
   };
   
-;
-  
-
-
+; 

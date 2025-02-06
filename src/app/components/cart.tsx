@@ -1,18 +1,17 @@
-// Cart.tsx (Cart Component)
+
 'use client'
-
-
-
 
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { IProduct } from '../../../types/product';
 
+import Link from 'next/link';
+
 
 
 interface CartProps {
-  initialProducts?: IProduct[];  // Allow passing products as props (optional)
+  initialProducts?: IProduct[]; 
 }
 
 const Cart = ({ initialProducts }: CartProps) => {
@@ -27,7 +26,7 @@ const Cart = ({ initialProducts }: CartProps) => {
       setProducts(item)
 
       const total = item.reduce<number>((acc: number, product: IProduct) => {
-        const quantity = product.quantity ?? 0;  // Use 0 if quantity is undefined
+        const quantity = product.quantity ?? 0;
         return acc + (product.price * quantity);
       }, 0)
       setTotalAmount(total)
@@ -98,7 +97,9 @@ const Cart = ({ initialProducts }: CartProps) => {
   }
 
   return (
+ 
     <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
+   
     <h2 className="text-4xl font-bold text-center mb-6 underline">Shopping Cart</h2>
   
     <div className="flex flex-col space-y-6">
@@ -159,17 +160,19 @@ const Cart = ({ initialProducts }: CartProps) => {
         Clear Cart
       </button>
   
-      <button 
+    <Link href={"/checkout"}> <button
         onClick={handleCheckout} 
         className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
       >
         Proceed to Checkout
       </button>
+      </Link>
     </div>
+
   </div>
   
   
-  
+
   )
 }
 

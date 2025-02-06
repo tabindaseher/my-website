@@ -46,3 +46,8 @@ next-env.d.ts
 
 # secrets
 secrets.yml
+
+
+
+# clerk configuration (can include secrets)
+/.clerk/

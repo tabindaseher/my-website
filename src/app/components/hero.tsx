@@ -28,7 +28,7 @@ export default function Hero() {
         <Image
           src={image}
           alt="Showcasing Nike Air Show"
-          className="w-full object-cover"
+          className="w-full h-auto object-cover"
           width={1440} 
           height={600}
         />
@@ -91,7 +91,7 @@ export default function Hero() {
           <Image
             src={image2}
             alt="Nike Air Max Pulse"
-            className="w-full object-cover"
+            className="w-full h-auto object-cover"
             width={300}
             height={400}
           />
@@ -107,7 +107,7 @@ export default function Hero() {
           <Image
             src={image2}
             alt="Nike Air Max Pulse"
-            className="w-full object-cover"
+            className="w-full h-auto object-cover"
             width={300}
             height={400}
           />
@@ -123,7 +123,7 @@ export default function Hero() {
           <Image
             src={image4}
             alt="Nike Air Max 97 SE"
-            className="w-full object-cover"
+            className="w-full h-auto object-cover"
             width={300}
             height={400}
           />
@@ -139,7 +139,7 @@ export default function Hero() {
           <Image
             src={image4}
             alt="Nike Air Max SYSTM"
-            className="w-full object-cover"
+            className="w-full h-auto object-cover"
             width={300}
             height={400}
           />
@@ -157,7 +157,7 @@ export default function Hero() {
         <Image
           src={image5}
           alt="Running Boy"
-          className="w-full object-cover"
+          className="w-full h-auto object-cover"
           width={1440}
           height={600}
         />

@@ -4,6 +4,7 @@ import group from "@/app/assets/Group.png";
 import Header from '../components/header'
 
 
+
 export default function Contact(){
     return (
       <>
@@ -32,7 +33,9 @@ export default function Contact(){
           />
           <div className="flex items-center gap-2 mt-2">
             <div className="w-5 h-5 rounded border flex items-center justify-center">
-              <Image src={group} alt="Checkbox" />
+              <Image src={group} alt="Checkbox"
+              height={50}
+              width={50} />
             </div>
             <p className="text-xs text-gray-500">Keep me signed in</p>
             <p className="text-xs text-gray-400 ml-auto underline">
@@ -48,6 +51,7 @@ export default function Contact(){
 
           <button className="w-full h-10 bg-black text-white rounded mt-4">
             SIGN IN
+           
           </button>
 
           <p className="text-xs text-gray-500 mt-4">
