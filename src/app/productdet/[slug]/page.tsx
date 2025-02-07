@@ -79,7 +79,7 @@ interface Props {
 }
 
 const page = async ({ params }: Props) => {
-  // Wait for params to resolve if necessary (this might solve the issue)
+
   const { slug } = await params; // Ensure this is awaited
 
   const data = await client.fetch(
