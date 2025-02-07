@@ -82,9 +82,13 @@ import Header from "@/app/components/header";
 
 import { IProduct } from "../../../../types/product";
 
+interface ProductDetailProps {
+  params: {
+    slug: string;
+  };
+}
 
-// Dynamic route for fetching the product details based on slug
-const ProductDet = async ({params:{slug}}: {params:{slug: string}}) => {
+const ProductDet = async ({ params: { slug } }: ProductDetailProps) => {
 
 
   const query = `
