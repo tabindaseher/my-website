@@ -78,7 +78,7 @@ interface Props {
   };
 }
 
-const page = async ({ params }: Props) => {
+const ProductDetail = async ({ params }: Props) => {
 
   const { slug } = await params; // Ensure this is awaited
 
@@ -125,4 +125,4 @@ const page = async ({ params }: Props) => {
   );
 };
 
-export default page;
+export default ProductDetail
