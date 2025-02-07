@@ -7,6 +7,9 @@
 // import Header from "@/app/components/header";
 // import { IProduct } from "../../../../types/product";
 
+import { client } from "@/sanity/lib/client";
+import Image from "next/image";
+
 
 // // Define types for the page props
 // interface Props {
@@ -75,59 +78,113 @@
 
 
 
-import { client } from "@/sanity/lib/client";
-import Image from "next/image";
+// import { client } from "@/sanity/lib/client";
+// import Image from "next/image";
 import cart1 from "@/app/assets/Group (1).png"; // Cart icon
 import Header from "@/app/components/header";
 
-import { IProduct } from "../../../../types/product";
+// import { IProduct } from "../../../../types/product";
 
-interface ProductDetailProps {
+// interface ProductDetailProps {
+//   params: {
+//     slug: string;
+//   };
+// }
+
+// const ProductDet = async ({ params: { slug } }: ProductDetailProps) => {
+
+
+//   const query = `
+//   *[_type == "product" && slug.current ==$slug]{
+//   description, 
+//  _id,
+//     productName ,
+//    "slug":slug.current,
+//   price,
+//     "imageUrl": image.asset->url
+// }[0]
+//   `
+//   const product : IProduct | null = await client.fetch( query , {slug})
+
+// if(!product){
+//   return (
+//     <div className="font-bold text-center p-3">Product Not Found</div>
+//   )
+// }
+ 
+
+
+//   return (
+//     <>
+//       <Header />
+//       <div className="w-full h-auto top-[96px] relative flex flex-col md:flex-row justify-center">
+//         <div className="pr-8 flex justify-center">
+//           <Image
+//             src={product.imageUrl}
+//             alt={product.productName}
+//             width={500}
+//             height={500}
+//             className="w-[653px] h-[653px] bg-[#F5F5F5] flex items-center justify-center object-contain"
+//           />
+//         </div>
+//         <div className="w-full md:w-[376px] h-auto md:h-[1041px] relative p-4">
+//           <h1 className="font-medium text-[48px] leading-[48px] mb-6">{product.productName}</h1>
+//           <p className="font-normal text-[15px] leading-[28px] h-auto mb-6">{product.description}</p>
+//           <p className="font-medium text-[36px] leading-[28px] mb-6">₹ {product.price}</p>
+//           <button className="rounded-[30px] py-[7.5px] pr-[23.92px] pl-[22.5px] bg-black flex justify-center items-center">
+//             <Image src={cart1} alt="cart" className="pr-1" />
+//             <p className="text-[#FFFFFF] font-medium text-[15px] text-center">Shop Air Max</p>
+//           </button>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default ProductDet;
+
+
+
+// Define types for the page props
+interface Props {
   params: {
     slug: string;
   };
 }
 
-const ProductDet = async ({ params: { slug } }: ProductDetailProps) => {
 
+const page = async ({params}:Props) => {
 
-  const query = `
-  *[_type == "product" && slug.current ==$slug]{
+const data = await client.fetch(`*[_type == "product" && slug.current =="${params.slug}"]{
   description, 
  _id,
     productName ,
+  
    "slug":slug.current,
-  price,
+    price,
     "imageUrl": image.asset->url
-}[0]
-  `
-  const product : IProduct | null = await client.fetch( query , {slug})
+}`)
 
-if(!product){
-  return (
-    <div className="font-bold text-center p-3">Product Not Found</div>
-  )
-}
- 
 
+console.log(data);
 
   return (
-    <>
+        <>
       <Header />
       <div className="w-full h-auto top-[96px] relative flex flex-col md:flex-row justify-center">
         <div className="pr-8 flex justify-center">
           <Image
-            src={product.imageUrl}
-            alt={product.productName}
+            src={data[0].imageUrl}
+            alt={data[0].productName}
             width={500}
             height={500}
             className="w-[653px] h-[653px] bg-[#F5F5F5] flex items-center justify-center object-contain"
           />
         </div>
         <div className="w-full md:w-[376px] h-auto md:h-[1041px] relative p-4">
-          <h1 className="font-medium text-[48px] leading-[48px] mb-6">{product.productName}</h1>
-          <p className="font-normal text-[15px] leading-[28px] h-auto mb-6">{product.description}</p>
-          <p className="font-medium text-[36px] leading-[28px] mb-6">₹ {product.price}</p>
+          <h1 className="font-medium text-[48px] leading-[48px] mb-6">{data[0].productName}</h1>
+          <p className="font-normal text-[15px] leading-[28px] h-auto mb-6">{data[0].description}</p>
+          <p className="font-medium text-[36px] leading-[28px] mb-6">₹ {data[0].price}</p>
           <button className="rounded-[30px] py-[7.5px] pr-[23.92px] pl-[22.5px] bg-black flex justify-center items-center">
             <Image src={cart1} alt="cart" className="pr-1" />
             <p className="text-[#FFFFFF] font-medium text-[15px] text-center">Shop Air Max</p>
@@ -135,9 +192,6 @@ if(!product){
         </div>
       </div>
     </>
-  );
-};
-
-export default ProductDet;
-
-
+  )
+}
+export default page

@@ -124,6 +124,8 @@ export default async function All_Product () {
           {/* Right side */}
           <div className="container mx-auto p-4">
             {/* PRODUCT LISTING */}
+
+       
            
             <ProductListing products={products} />
 
