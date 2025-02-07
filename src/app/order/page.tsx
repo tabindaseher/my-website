@@ -16,7 +16,7 @@ type FormData = {
    total: number| string;
 
  };
-const BillingInfo = ({ products }: { products: IProduct[] }) => {
+const BillingInfo = () => {
 
   const [formData, setFormData] = useState<FormData>({
     firstName: '',

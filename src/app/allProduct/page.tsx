@@ -20,7 +20,8 @@ export default async function All_Product () {
   price,
   category,
   colors,
-slug,
+
+  "slug":slug.current,
  "imageUrl": image.asset->url,
  _id
 
