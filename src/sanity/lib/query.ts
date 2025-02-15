@@ -1,21 +1,4 @@
-// import { defineQuery } from "next-sanity";
+import { groq } from "next-sanity";
 
-
-// export const allproduct = defineQuery(`
-
-//   *[_type == "product"] {
-//     productName,
-//     imageUrl,
-//     status,
-//     description,
-//     inventory,
-//     colors,
-//     price,
-//     category,
-//     slug,
-//     "imageUrl": image.asset->url,
-//     "slug": slug.current
-//   }
-
-
-//     `)
+export const AllProduct = groq` *[_type == "product"]`
+export const FourProduct = groq` *[_type == "product"] [0...3]`

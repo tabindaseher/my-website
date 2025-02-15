@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { IProduct } from "../../../types/product";
 import Link from "next/link";
 
+
 <meta
   name="format-detection"
   content="telephone=no, date=no, email=no, address=no"
@@ -31,6 +32,7 @@ const ProductListing = ({ products }: { products: IProduct[] }) => {
     added into cart`,
     showConfirmButton: true,
     timer: 2000,
+    
   })
 
     if (cart[product.productName]) {
@@ -52,6 +54,23 @@ const ProductListing = ({ products }: { products: IProduct[] }) => {
     product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.colors.includes(searchQuery.toLowerCase())
   );
+
+  // payment 
+
+  async function handlePayment(product : IProduct){
+    const res = await fetch('/api/payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({product})
+    })
+    const data = await res.json()
+    window.location.href = data.url
+    console.log(window);
+    
+    console.log(data) 
+  }
 
 
   return (
@@ -83,11 +102,13 @@ const ProductListing = ({ products }: { products: IProduct[] }) => {
               <p className="text-[15px] font-normal text-[#757575]">{product.category}</p>
               <p className="text-[15px] font-normal text-[#757575]">{product.colors}</p>
               <p className="text-[15px] font-normal text-black mt-2">MRP : ₹ {product.price}</p>
+
               <div className="flex flex-col sm:flex-row justify-between items-center p-2">
-  <button
-    onClick={() => handleClick(product)}
-    className="bg-gray-300 rounded-md p-2 mt-2 font-bold w-full sm:w-auto"
-  >
+      
+          <button
+          onClick={() => handleClick(product)}
+           className="bg-gray-300 rounded-md p-2 mt-2 font-bold w-full sm:w-auto"
+          >
     Add to cart
   </button>
   <Link href={`/productdet/${product.slug}`}>
@@ -95,6 +116,16 @@ const ProductListing = ({ products }: { products: IProduct[] }) => {
       View Details
     </button>
   </Link>
+
+</div>
+
+<div>
+<button
+       onClick={() => handlePayment(product)}
+           className="bg-blue-600 text-center px-24 hover:bg-blue-900 hover:text-white rounded-md p-2 mt-2 font-bold w-full sm:w-auto"
+          >
+    Payment
+  </button>
 </div>
 
             </div>

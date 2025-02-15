@@ -5,6 +5,7 @@
 import { useState } from 'react';
  import Swal from "sweetalert2";
  import { IProduct } from '../../../types/product';
+
 type FormData = {
    firstName: string;
    lastName: string;
@@ -113,6 +114,21 @@ const BillingInfo = () => {
 
 
 
+  async function handlePayment(product : IProduct){
+    const res = await fetch('/api/payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({product})
+    })
+    const data = await res.json()
+    window.location.href = data.url
+    console.log(window);
+    
+    console.log(data) 
+  }
+
 
   return (
     <div className="max-w-lg mx-auto  p-6 bg-gray-50 shadow-lg rounded-lg mt-6">
@@ -203,8 +219,9 @@ const BillingInfo = () => {
           />
           {errors.city && <p className="text-red-500 text-xs">{errors.city}</p>}
         </div>
-   
-        <button 
+    
+     
+   <button 
   type="submit"
   className="w-full bg-blue-800 text-white py-2 rounded-md hover:bg-blue-900 font-bold"
   disabled={isLoading} // Disable the button while loading
@@ -212,6 +229,11 @@ const BillingInfo = () => {
   
   {isLoading ? 'Placing Order...' : 'Place Order'} 
 </button>
+
+
+
+   
+
    
 
       </form>

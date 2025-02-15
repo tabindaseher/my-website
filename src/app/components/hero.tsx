@@ -9,7 +9,9 @@ import tag2 from "@/app/assets/Frame (3).png";
 import image from "@/app/assets/Image.png";
 import Link from "next/link";
 
+
 export default function Hero() {
+   
   return (
     <>
       {/* Heading */}

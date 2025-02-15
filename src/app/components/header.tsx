@@ -9,7 +9,14 @@ import cartIcon from "@/app/assets/Vector (2).png"
 import Link from "next/link";
 import { useState } from "react";
 
+import {
 
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs'
+import { MdMenu } from "react-icons/md";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,14 +35,13 @@ const Header = () => {
          height={50}
          width={50} className="w-[19.2px] h-[17.97px]"/>
 
+        {/* Hamburger Icon (React Icon) */}
         <button
-        onClick={toggleMenu}
-        className="sm:hidden block p-2 focus:outline-none"
-        aria-label="Toggle Menu">
-        <div className="w-6 h-1 bg-black mb-1"></div>
-        <div className="w-6 h-1 bg-black mb-1"></div>
-        <div className="w-6 h-1 bg-black"></div>
-      </button>
+          onClick={toggleMenu}
+          className="md:hidden flex items-center"
+        >
+          < MdMenu size={30} />
+        </button>
         <ul
         className={`absolute top-10 right-0 bg-[#F5F5F5]  p-4 space-y-2 sm:flex sm:space-y-0 sm:gap-[15.38px] sm:static ${
           isMenuOpen ? 'block' : 'hidden'
@@ -58,11 +64,13 @@ const Header = () => {
 
            <li className="leading-[14px] font-medium text-[11px] pr-2 ">
             <Link href="/login">
-           Login
-       
+            <SignedOut>
+          <SignInButton mode="modal" />
+        </SignedOut>
+        <SignedIn>
+            <UserButton  />
+          </SignedIn>
           </Link>
-
-         
            </li>
 </ul>
       </div>
@@ -77,9 +85,7 @@ const Header = () => {
          {/* Hamburger Menu for Small Screens */}
   <div className="block md:hidden">
     <button className="text-gray-700 focus:outline-none">
-      <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
+      
     </button>
   </div>
 
@@ -95,6 +101,10 @@ const Header = () => {
 
         </ul>
         </nav>
+
+        <div className="  ">
+          <input type="text" />
+        </div>
         
         {/* cart icon */}
         <div className="flex gap-3 items-center">
