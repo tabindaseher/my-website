@@ -8,7 +8,10 @@ export interface IProduct {
     status: string;
     category: string;
     price: number;
-    slug:string,
+    slug:{
+      _type: "slug"
+      current: string;
+    },
     imageUrl: string;
     quantity: number 
   }
